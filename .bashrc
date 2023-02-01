@@ -131,10 +131,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/home/matthew/.local/bin:$PATH"
 
-
-# Misc
-xset r rate 190 35
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
