@@ -1,0 +1,6 @@
+# Sway config
+# `man 5 sway` for a complete reference
+
+# I've chopped this up into partial files for easier management
+include /home/matthew/projects/dotfiles/sway/config.d/*
+
