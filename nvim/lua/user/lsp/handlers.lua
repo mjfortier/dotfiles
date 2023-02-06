@@ -52,6 +52,7 @@ local function lsp_highlight_document(client)
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]],
@@ -90,6 +91,20 @@ M.on_attach = function(client, bufnr)
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+  vim.api.nvim_create_autocmd("CursorHold", {
+    buffer = bufnr,
+    callback = function()
+      local opts = {
+        focusable = false,
+        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        border = 'rounded',
+        source = 'always',
+        prefix = ' ',
+        scope = 'cursor',
+      }
+      vim.diagnostic.open_float(nil, opts)
+    end
+  })
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

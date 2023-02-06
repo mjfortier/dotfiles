@@ -27,7 +27,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Open file explorer
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>e", ":Lexplore 30<cr>", opts)
 -- Save and Quit
 keymap("n", "<leader>s", "<cmd>w<cr>", opts)
 keymap("n", "<leader>q", "<cmd>q<cr>", opts)
