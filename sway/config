@@ -1,6 +1,22 @@
-# Sway config
-# `man 5 sway` for a complete reference
+# SwayWM global configuration
+# Author: Matthew Fortier <matthew.fortier@monsoon.mozmail.com>
 
-# I've chopped this up into partial files for easier management
-include /home/matthew/projects/dotfiles/sway/config.d/*
+####################################
+# TODO:
+#   + Sway
+#     - Tidy config files
+#     - Lockscreen configuration
+#     - Waybar customization
+#     - Dunst customization
+#     - Screenshots
+#     - Screen sharing
+#     - Screen recording
+####################################
+
+set $menu rofi -terminal kitty -show run
+
+include /home/matthew/projects/dotfiles/sway/config.d/display
+include /home/matthew/projects/dotfiles/sway/config.d/keybinds
+include /home/matthew/projects/dotfiles/sway/config.d/startup
+include /home/matthew/projects/dotfiles/sway/config.d/systemd
 

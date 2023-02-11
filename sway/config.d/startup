@@ -1,0 +1,6 @@
+exec_always emacs --daemon
+bar swaybar_command waybar
+input "type:keyboard" {
+  repeat_rate 60
+  repeat_delay 350
+}
